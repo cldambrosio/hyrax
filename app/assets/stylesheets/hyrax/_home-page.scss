@@ -68,7 +68,14 @@
 
 .home-content {
   .nav {
-    margin-bottom: 20px;
+    margin-bottom: $padding-large-vertical * 2;
+  }
+
+  // Give some separation between the Works and Collections columns, which stack up vertically on mobile
+  @media screen and (max-width: 640px) {
+    > div {
+      margin-bottom: $padding-large-vertical * 3;
+    }
   }
 }
 
@@ -84,11 +91,11 @@
 }
 
 .home_share_work {
-  margin-bottom: $padding-large-vertical * 2.5;
 
-  p {
-    margin: 0.25em auto;
-    width: 40%;
+  .terms-of-use {
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: $padding-small-vertical;
   }
 }
 

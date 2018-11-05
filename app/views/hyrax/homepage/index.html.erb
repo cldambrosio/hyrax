@@ -1,6 +1,9 @@
 <% provide :page_title, application_name %>
 
 <% if @presenter.display_share_button? %>
+<div class="jumbotron">
+  <h1>Hello, Hyrax</h1>
+  <p>Some type of welcome message could go here</p>
   <div class="home_share_work row">
     <div class="col-sm-12 text-center">
       <% if signed_in? %>
@@ -12,7 +15,7 @@
           <% end %>
         <% else # simple link to the first work type %>
           <%= link_to new_polymorphic_path([main_app, @presenter.first_work_type]),
-                class: 'btn btn-primary' do %>
+                class: 'btn btn-primary btn-lg' do %>
             <i class="glyphicon glyphicon-upload" aria-hidden="true"></i> <%= t('hyrax.share_button') %>
           <% end %>
         <% end %>
@@ -22,9 +25,10 @@
           <i class="glyphicon glyphicon-upload" aria-hidden="true"></i> <%= t('hyrax.share_button') %>
         <% end %>
       <% end %>
-      <p><%= link_to t(:'hyrax.pages.tabs.terms_page'), hyrax.terms_path %></p>
+      <p class="terms-of-use"><%= link_to t(:'hyrax.pages.tabs.terms_page'), hyrax.terms_path %></p>
     </div>
   </div>
+</div>
 <% end %>
 
 <div class="row home-content">
